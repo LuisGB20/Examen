@@ -245,19 +245,12 @@ function Index() {
                 <section className="py-5 text-center container">
                     <div className="row py-lg-5">
                         <div className="col-lg-6 col-md-8 mx-auto">
-                            <h1 className="fw-light">Album example</h1>
+                            <h1 className="fw-light">Maravillas Botanicas</h1>
                             <p className="lead text-body-secondary">
-                                Something short and leading about the collection below—its contents,
-                                the creator, etc. Make it short and sweet, but not too short so
-                                folks don’t simply skip over it entirely.
-                            </p>
-                            <p>
-                                <a href="#" className="btn btn-primary my-2">
-                                    Main call to action
-                                </a>
-                                <a href="#" className="btn btn-secondary my-2">
-                                    Secondary action
-                                </a>
+                            Explora la exquisita colección 'Verde Vida' de la renombrada botánica Camila Flores, 
+                                una fascinante recopilación de plantas raras y exóticas de todo el mundo. 
+                                Sumérgete en su pasión por la botánica a través de esta maravillosa exposición, 
+                                donde la belleza natural se encuentra con el arte de la naturaleza.
                             </p>
                         </div>
                     </div>
@@ -285,23 +278,7 @@ function Index() {
                     <p className="card-text">
                         {planta.cycle} Cycle, Watering: {planta.watering}
                     </p>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <div className="btn-group">
-                            <button
-                                type="button"
-                                className="btn btn-sm btn-outline-secondary"
-                            >
-                                View
-                            </button>
-                            <button
-                                type="button"
-                                className="btn btn-sm btn-outline-secondary"
-                            >
-                                Edit
-                            </button>
-                        </div>
-                        <small className="text-muted">9 mins</small>
-                    </div>
+                    
                 </div>
             </div>
         </div>
