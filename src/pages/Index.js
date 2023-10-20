@@ -29,7 +29,7 @@ function Index() {
                 content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
             />
             <meta name="generator" content="Hugo 0.118.2" />
-            <title>Album example · Bootstrap v5.3</title>
+            <title>Maravillas Botanicas · Bootstrap v5.3</title>
             <link
                 rel="canonical"
                 href="https://getbootstrap.com/docs/5.3/examples/album/"
@@ -177,10 +177,10 @@ function Index() {
                             <div className="col-sm-8 col-md-7 py-4">
                                 <h4>About</h4>
                                 <p className="text-body-secondary">
-                                    Add some information about the album below, the author, or any
-                                    other background context. Make it a few sentences long so folks
-                                    can pick up some informative tidbits. Then, link them off to some
-                                    social networking sites or contact information.
+                                Explora la exquisita colección 'Verde Vida' de la renombrada botánica Camila Flores, 
+                                una fascinante recopilación de plantas raras y exóticas de todo el mundo. 
+                                Sumérgete en su pasión por la botánica a través de esta maravillosa exposición, 
+                                donde la belleza natural se encuentra con el arte de la naturaleza.
                                 </p>
                             </div>
                             <div className="col-sm-4 offset-md-1 py-4">
