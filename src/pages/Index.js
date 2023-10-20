@@ -264,7 +264,7 @@ function Index() {
                 </section>
                 <div className="album py-5 bg-body-tertiary">
                     <div className="container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                   
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     {datos.map(planta => (
         <div className="col" key={planta.id}>
@@ -278,7 +278,7 @@ function Index() {
                         height={225}
                     />
                 ) : (
-                    <div>No image available</div>
+                    <div className="bd-placeholder-img card-img-top" />
                 )}
                 <div className="card-body">
                     <h3>{planta.common_name}</h3>
@@ -300,18 +300,19 @@ function Index() {
                                 Edit
                             </button>
                         </div>
-                        <small className="text-body-secondary">9 mins</small>
+                        <small className="text-muted">9 mins</small>
                     </div>
                 </div>
             </div>
         </div>
     ))}
 </div>
+</div>
 
                             
                         </div>
-                    </div>
-                </div>
+                    
+                
             </main>
             <footer className="text-body-secondary py-5">
                 <div className="container">
