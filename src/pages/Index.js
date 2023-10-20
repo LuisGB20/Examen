@@ -2,38 +2,19 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 
 function Index() {
-
-    const [datos, setDatos] = React.useState([])
-    const [planta, setPlanta] = React.useState()
-
-    const ApiKey = "sk-BMvA65328940215262568"
+    const [datos, setDatos] = React.useState([]);
 
     useEffect(() => {
         obtenerPlantas();
-    }, [])
+    }, []);
 
     const obtenerPlantas = async () => {
         axios.get('https://perenual.com/api/species-list?key=sk-BMvA65328940215262568')
             .then(response => {
-                // Manejar la respuesta exitosa
                 console.log('Respuesta de la API:', response.data);
-                setDatos(response.data)
+                setDatos(response.data.data);
             })
             .catch(error => {
-                // Manejar errores
-                console.error('Error al hacer la solicitud:', error);
-            });
-    }
-
-    const obtenerPlanta = async (id) => {
-        axios.get(`https://perenual.com/api/species/details/${id}?key=sk-BMvA65328940215262568`)
-            .then(response => {
-                // Manejar la respuesta exitosa
-                console.log('Respuesta de la API:', response.data);
-                setDatos(response.data)
-            })
-            .catch(error => {
-                // Manejar errores
                 console.error('Error al hacer la solicitud:', error);
             });
     }
@@ -283,51 +264,51 @@ function Index() {
                 </section>
                 <div className="album py-5 bg-body-tertiary">
                     <div className="container">
-                        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                            <div className="col">
-                                <div className="card shadow-sm">
-                                    <svg
-                                        className="bd-placeholder-img card-img-top"
-                                        width="100%"
-                                        height={225}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        role="img"
-                                        aria-label="Placeholder: Thumbnail"
-                                        preserveAspectRatio="xMidYMid slice"
-                                        focusable="false"
-                                    >
-                                        <title>Placeholder</title>
-                                        <rect width="100%" height="100%" fill="#55595c" />
-                                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                                            Thumbnail
-                                        </text>
-                                    </svg>
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            This is a wider card with supporting text below as a natural
-                                            lead-in to additional content. This content is a little bit
-                                            longer.
-                                        </p>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <div className="btn-group">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-sm btn-outline-secondary"
-                                                >
-                                                    View
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-sm btn-outline-secondary"
-                                                >
-                                                    Edit
-                                                </button>
-                                            </div>
-                                            <small className="text-body-secondary">9 mins</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {datos.map(planta => (
+        <div className="col" key={planta.id}>
+            <div className="card shadow-sm">
+                {planta.default_image && planta.default_image.medium_url ? (
+                    <img
+                        src={planta.default_image.medium_url}
+                        alt={planta.common_name}
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height={225}
+                    />
+                ) : (
+                    <div>No image available</div>
+                )}
+                <div className="card-body">
+                    <h3>{planta.common_name}</h3>
+                    <p className="card-text">
+                        {planta.cycle} Cycle, Watering: {planta.watering}
+                    </p>
+                    <div className="d-flex justify-content-between align-items-center">
+                        <div className="btn-group">
+                            <button
+                                type="button"
+                                className="btn btn-sm btn-outline-secondary"
+                            >
+                                View
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-sm btn-outline-secondary"
+                            >
+                                Edit
+                            </button>
+                        </div>
+                        <small className="text-body-secondary">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ))}
+</div>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -353,6 +334,7 @@ function Index() {
         </>
 
     )
+    
 }
 
 export default Index
